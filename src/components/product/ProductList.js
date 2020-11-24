@@ -11,8 +11,8 @@ export const ProductList = () => {
 
   useEffect(() => {
     console.log("ProductList: Initial render before data")
-    getProducts()
-      .then(getProductTypes)
+    getProductTypes()
+    .then(getProducts)
   }, [])
 
   return (
@@ -29,10 +29,4 @@ export const ProductList = () => {
   )
 
 }
-    // return (
-    //   <div className="products">
-    //     {
-    //       products.map(p => <Product key={p.id} product={p} />)
-    //     }
-    //   </div>
-    // )
+    
