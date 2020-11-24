@@ -19,7 +19,7 @@ export const ApplicationViews = (props) => {
 
       <ProductProvider>
         <ProductTypeProvider>
-          <Route path="/products">
+          <Route exact path="/products">
             <ProductList />
           </Route>
         </ProductTypeProvider>

@@ -4,11 +4,11 @@ import "./Product.css"
 //import {ProductType} from "../productType/ProductTypeProvider"
 //const mappedType = productType(pt => <li>{pt.name}</li>)
 
-export const Product = ({ product, type}) => (
+export const Product = ({ product, productType}) => (
   <section className="product">
     <h3 className="product__name">{product.name}</h3>
     <p className="product__price"> Price: ${product.price}</p>
-    <p className="product__productTypeId">Type: {type.name}
+    <p className="product__productTypeId">Type: {productType.name}
     </p>
   </section>
 )
