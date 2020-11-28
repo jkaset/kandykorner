@@ -17,16 +17,23 @@ export const ProductList = () => {
 
   return (
   <div className="products">
+  
   {products.map(product => {
     const productType = productTypes.find(x => x.id === product.productTypeId)
     
     console.log(product)
     return <Product key={product.id}
       productType={productType}
-      product={product} />
+      product={product} 
+      
+      />
+    
   })}
+      
   </div>
   )
 
 }
+
+
     
