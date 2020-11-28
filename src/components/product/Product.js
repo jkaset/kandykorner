@@ -10,5 +10,15 @@ export const Product = ({ product, productType}) => (
     <p className="product__price"> Price: ${product.price}</p>
     <p className="product__productTypeId">Type: {productType.name}
     </p>
+    <button type="submit">Purchase</button>
   </section>
 )
+
+// type="submit"
+//         onClick={evt => {
+//           evt.preventDefault() // Prevent browser from submitting the form
+//           constructNewEmployee()
+//         }}
+//         className="btn btn-primary">
+//         Hire
+//             </button>
