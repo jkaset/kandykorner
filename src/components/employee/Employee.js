@@ -10,3 +10,4 @@ export const Employee = ({ employee, location }) => (
         <div className="employee__manager">Manager? {employee.manager}</div>
     </section>
 )
+

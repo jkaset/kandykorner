@@ -86,7 +86,7 @@ export const EmployeeForm = (props) => {
         }}
         className="btn btn-primary">
         Hire
-            </button>
+      </button>
     </form>
   )
 }
