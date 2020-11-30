@@ -4,7 +4,7 @@ import { OrderContext } from "../customerCandy/OrderProvider"
 //import { Link } from "react-router-dom"
 //import {ProductType} from "../productType/ProductTypeProvider"
 //const mappedType = productType(pt => <li>{pt.name}</li>)
-export const Product = ({ props, product, productType }) => {
+export const Product = ({ product, productType }) => {
   const { addOrder } = useContext(OrderContext)
   const createOrder = (productId) => {
     const customer = parseInt(localStorage.getItem('kandy_customer'))
@@ -23,6 +23,7 @@ export const Product = ({ props, product, productType }) => {
       <p className="product__productTypeId">Type: {productType.name}
       </p>
       <button onClick={() => createOrder(product.id)
+      
       }>
         Purchase
   </button>
