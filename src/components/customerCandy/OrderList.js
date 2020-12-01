@@ -14,23 +14,26 @@ export const OrderList = props => {
     getProducts().then(getOrders)
   }, [])
 
-    
+
   return (
     <div className="orders">
-      <h2>I render!</h2>
-    
-    {/* {products.map(product => {
-    const productType = productTypes.find(x => x.id === product.productTypeId)
+  
+  {orders.map(order => {
+    const product = products.find(x => x.id === order.productId)
     
     console.log(product)
-    return <Product key={product.id}
-      productType={productType}
-      product={product} 
+    return <Order key={order.id}
+      product={product}
+      
       
       />
     
-  })} */}
-        
-    </div>
-    )
+  })}
+      
+  </div>
+
+  )
 }
+    
+
+    
