@@ -1,32 +1,39 @@
 import React, { useContext, useEffect } from "react"
 import { OrderContext } from "./OrderProvider"
-import { Link } from "react-router-dom"
+import { Order } from "./Order"
+import { ProductContext } from "../product/ProductProvider"
+//import { Link } from "react-router-dom"
 import "./Order.css"
+import { Product } from "../product/Product"
 
 export const OrderList = props => {
   const { orders, getOrders } = useContext(OrderContext)
+  const { products, getProducts } = useContext(ProductContext)
 
   useEffect(() => {
-    getOrders()
+    getProducts().then(getOrders)
   }, [])
+
 
   return (
     <div className="orders">
-      <h1>Orders</h1>
+  
+  {orders.map(order => {
+    const product = products.find(x => x.id === order.productId)
+    
+    console.log(product)
+    return <Order key={order.id}
+      product={product}
+      
+      
+      />
+    
+  })}
+      
+  </div>
 
-      <button onClick={() => props.history.push("/orders/create")}>
-        Purchase
-            </button>
-
-      <article className="OrderList">
-        {
-          Orders.map(order => {
-            return <Link key={order.id} to={`/orders/${order.id}`}>
-              <h3>{order.name}</h3>
-            </Link>
-          })
-        }
-      </article>
-    </div>
   )
 }
+    
+
+    
