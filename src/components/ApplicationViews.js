@@ -5,6 +5,7 @@ import { LocationList } from "./location/LocationList"
 import { ProductProvider } from "./product/ProductProvider"
 import { ProductList } from "./product/ProductList"
 import { ProductTypeProvider } from "./productType/ProductTypeProvider"
+import { ProductSearch } from "./product/ProductSearch"
 import { EmployeeProvider } from "./employee/EmployeeProvider"
 import { EmployeeList } from "./employee/EmployeeList"
 import { EmployeeForm } from "./employee/EmployeeForm"
@@ -27,9 +28,17 @@ export const ApplicationViews = (props) => {
       <ProductProvider>
         <OrderProvider>
           <ProductTypeProvider>
-            <Route exact path="/products">
+            {/* <Route exact path="/products">
               <ProductList />
-            </Route>
+            </Route> */}
+            <Route exact path="/products" render={
+                props => {
+                    return <>
+                        <ProductSearch />
+                        <ProductList {...props} />
+                    </>
+                }
+            } />
           </ProductTypeProvider>
         </OrderProvider>
       </ProductProvider>
