@@ -10,30 +10,36 @@ export const OrderList = props => {
   const { orders, getOrders } = useContext(OrderContext)
   const { products, getProducts } = useContext(ProductContext)
 
+  const user = parseInt(localStorage.getItem("kandy_customer"))
+
   useEffect(() => {
     getProducts().then(getOrders)
   }, [])
 
+  const customers = [];
 
+  const userOrders = customers.filter(c => c.id === user);
+  //filter orders.customer === user
   return (
     <div className="orders">
-  
-  {orders.map(order => {
-    const product = products.find(x => x.id === order.productId)
-    
-    console.log(product)
-    return <Order key={order.id}
-      product={product}
-      
-      
-      />
-    
-  })}
-      
-  </div>
+
+      {orders.map(order => {
+        if (order.customer === user) {
+          const product = products.find(x => x.id === order.productId)
+
+
+          console.log(product)
+          return <Order key={order.id}
+            product={product}
+
+
+          />
+        }
+      })}
+
+    </div>
 
   )
 }
-    
 
-    
+
