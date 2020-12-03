@@ -1,9 +1,7 @@
 import React, { useContext } from "react"
 import "./Product.css"
 import { OrderContext } from "../customerCandy/OrderProvider"
-//import { Link } from "react-router-dom"
-//import {ProductType} from "../productType/ProductTypeProvider"
-//const mappedType = productType(pt => <li>{pt.name}</li>)
+
 export const Product = ({ props, product, productType }) => {
   const { addOrder } = useContext(OrderContext)
   const createOrder = (productId) => {
