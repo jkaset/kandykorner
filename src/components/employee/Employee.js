@@ -1,6 +1,6 @@
 import React from "react"
 import "./Employee.css"
-import {EmployeeContext} from "./EmployeeProvider"
+//import {EmployeeContext} from "./EmployeeProvider"
 
 export const Employee = ({ employee, location, props}) => (
     //const { removeEmployee } = useContext(EmployeeContext)
@@ -10,14 +10,15 @@ export const Employee = ({ employee, location, props}) => (
         <div className="employee__hourlyRate">Starting Hourly Rate: {employee.hourlyRate}</div>
         <div className="employee__fullTime">Full-time? {employee.fullTime}</div>
         <div className="employee__manager">Manager? {employee.manager}</div>
-        <button className="btn--release"
+        <button>remove employee</button>
+        {/* <button className="btn--release"
                 onClick={() => {
                     removeEmployee(employee.id)
                         .then(() => {
                             props.history.push("/employees")
                         })
                 }}
-            >Remove Employee</button>
+            >Remove Employee</button> */}
     </section>
 )
 
