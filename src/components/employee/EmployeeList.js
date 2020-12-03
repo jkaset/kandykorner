@@ -5,7 +5,7 @@ import { Employee } from "./Employee"
 import "./Employee.css"
 
 export const EmployeeList = (props) => {
-  const { employees, getEmployees } = useContext(EmployeeContext)
+  const { employees, getEmployees, removeEmployee } = useContext(EmployeeContext)
   const { locations, getLocations } = useContext(LocationContext)
 
 
@@ -27,11 +27,12 @@ export const EmployeeList = (props) => {
             const branch = locations.find(l => l.id === employee.locationId)
 
             return <Employee key={employee.id}
-              location={branch}
-              employee={employee} />
+            location={branch}
+            employee={employee} />
           })
         }
       </article>
+       
     </div>
   )
 }
